@@ -1,14 +1,14 @@
-import { Component, OnInit, ElementRef, ViewChild } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { Store } from '@ngrx/store';
+import {Component, OnInit, ElementRef, ViewChild} from '@angular/core';
+import {Observable} from 'rxjs/Observable';
+import {Store} from '@ngrx/store';
 
 import * as fromRoot from '../../reducers';
 import * as paiAction from '../../actions/pai';
 
 import * as scale from 'd3-scale';
 import * as selection from 'd3-selection';
-import { hierarchy as d3hierarchy, partition as d3partition } from 'd3-hierarchy';
-import { interpolate as d3interpolate } from 'd3-interpolate';
+import {hierarchy as d3hierarchy, partition as d3partition} from 'd3-hierarchy';
+import {interpolate as d3interpolate} from 'd3-interpolate';
 import * as d3Shape from 'd3-shape';
 import 'd3-transition';
 
@@ -18,7 +18,7 @@ import 'd3-transition';
   styleUrls: ['./pai.component.scss']
 })
 export class PaiComponent implements OnInit {
-  @ViewChild('pai')paiContainer: ElementRef;
+  @ViewChild('pai') paiContainer: ElementRef;
   private arcGenerator: any;
   private mainAxes: {
     x: any,
@@ -28,9 +28,7 @@ export class PaiComponent implements OnInit {
   private paiElement: any;
   private colorScale: any;
 
-  constructor(
-    private store: Store<fromRoot.State>,
-  ) {
+  constructor(private store: Store<fromRoot.State>,) {
     this.mainAxes = {
       x: 0,
       y: 0
@@ -49,7 +47,7 @@ export class PaiComponent implements OnInit {
           this.initPai();
           this.loadData(res);
         }
-    });
+      });
   }
 
   zoomToNode(d) {
@@ -65,15 +63,15 @@ export class PaiComponent implements OnInit {
         const xd = d3interpolate(x.domain(), [d.x0, d.x1]);
         const yd = d3interpolate(y.domain(), [d.y0, 1]);
         const yr = d3interpolate(y.range(), [d.y0 ? 20 : 0, radius]);
-          return function (t) {
-            x.domain(xd(t));
-            y.domain(yd(t)).range(yr(t));
-          };
+        return function (t) {
+          x.domain(xd(t));
+          y.domain(yd(t)).range(yr(t));
+        };
       })
       .selectAll('path')
       .attrTween('d', (dd: any) => {
         return function () {
-            return arc(dd);
+          return arc(dd);
         };
       });
   }
