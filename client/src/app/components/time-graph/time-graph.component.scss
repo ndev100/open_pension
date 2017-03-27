@@ -1,0 +1,29 @@
+@import "../../../assets/vars.scss";
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
+
+.x.axis path {
+  display: none;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.overlay {
+  fill: none;
+  pointer-events: all;
+  opacity: 0;
+}
+
+.focus circle {
+  fill: none;
+  stroke: steelblue;
+}
