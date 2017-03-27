@@ -9,6 +9,7 @@ export const ActionTypes = {
 
 export class LoadPaiAction implements Action {
   type = ActionTypes.LOAD_PAI;
+  payload: any;
 
   constructor() { }
 }

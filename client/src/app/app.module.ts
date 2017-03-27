@@ -24,8 +24,8 @@ import { AboutComponent } from './components/about/about.component';
 import { PaiEffects } from './effects/pai';
 
 import { PaiService } from './services/pai.service';
-import { InvestmentGraphComponent } from './components/investment-graph/investment-graph.component';
-import { TimeGraphComponent } from './components/investment-graph/time-graph/time-graph.component';
+import { TimeGraphComponent } from './components/time-graph/time-graph.component';
+import { InvestmentsGraphComponent } from './components/investments-graph/investments-graph.component';
 
 @NgModule({
   declarations: [
@@ -36,8 +36,8 @@ import { TimeGraphComponent } from './components/investment-graph/time-graph/tim
     PaiComponent,
     FiltersComponent,
     AboutComponent,
-    InvestmentGraphComponent,
     TimeGraphComponent,
+    InvestmentsGraphComponent,
   ],
   imports: [
     BrowserModule,
