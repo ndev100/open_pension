@@ -4,7 +4,9 @@ import { Component } from '@angular/core';
   selector: 'op-root',
   template: `
     <op-header></op-header>
-    <router-outlet></router-outlet>
+    <section>
+      <router-outlet></router-outlet>
+    </section>
     <op-footer></op-footer>
   `,
   styles: [``]
