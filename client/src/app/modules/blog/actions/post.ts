@@ -11,7 +11,6 @@ export const ActionTypes = {
 
 export class LoadPostsAction implements Action {
   type = ActionTypes.LOAD_POSTS;
-  payload: any;
 
   constructor() { }
 }
