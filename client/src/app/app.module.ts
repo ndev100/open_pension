@@ -12,6 +12,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
+import { DragulaModule } from 'ng2-dragula';
 import { AppRoutingModule } from './app-routing.module';
 import { reducer } from './reducers';
 
@@ -42,6 +43,7 @@ import { PaiService } from './services/pai.service';
     FormsModule,
     HttpModule,
     MaterialModule,
+    DragulaModule,
     BrowserAnimationsModule,
     AppRoutingModule,
     StoreModule.provideStore(reducer),

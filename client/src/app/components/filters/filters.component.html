@@ -1,3 +1,5 @@
-<p>
-  filters works!
-</p>
+<div>
+  <nav [dragula]='"filters-bag"' [dragulaModel]='filters'>
+   <div *ngFor="let filter of filters">{{filter}}</div> 
+  </nav>
+</div>
